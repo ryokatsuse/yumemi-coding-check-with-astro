@@ -2,12 +2,10 @@
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer class="text-whitetext-center bg-gray-700 pb-2">
+  <ul class="flex items-start max-w-3xl m-auto p-4 gap-2">
+    <li><a class="text-white underline hover:hover:no-underline" href="/">ホーム</a></li>
+    <li><a class="text-white underline hover:hover:no-underline" href="/blog">すべての記事</a></li>
+  </ul>
+  <small class="text-white block text-center">&copy; {today.getFullYear()} このサイトは<a class="text-white underline hover:hover:no-underline" href="https://astro.build/">Astro</a>で作成しています。</small>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>
