@@ -1,6 +1,7 @@
 ---
 import Layout from '@components/common/Layout.astro';
-import { DataForPopulationGraph, PopulationGraph } from '@components/feature/graph/PopulationGraph';
+import { DataForPopulationGraph, PopulationGraph, Prefecture } from '@components/feature/graph/PopulationGraph';
+import CheckBox from '@components/feature/prefectures/CheckBox.astro';
 
 // FIXME:仮のモックデータなので後で削除なりMSWなりに移行する
 const data: DataForPopulationGraph[] = [
@@ -33,12 +34,18 @@ const data: DataForPopulationGraph[] = [
     ]
   },
   ]
+
+  const handle = (pref: Prefecture) => {
+    console.log('pref', pref)
+  }
 ---
 
 <Layout>
   <section>
     <h1 class="text-xl">都道府県の選択</h1>
     <p>選択した都道府県の総人口の推移がグラフで表示されます。</p>
+    <CheckBox prefecture={{prefCode: 3,
+      prefName: "岩手県"}} onChangePrefectureItem={handle} isChecked={true}/>
   </section>
   <section class="mt-6">
     <h1 class="text-xl">総人口の推移グラフ</h1>
