@@ -1,5 +1,10 @@
 {
   "version": "0.2.0",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "configurations": [
     {
       "command": "./node_modules/.bin/astro dev",
