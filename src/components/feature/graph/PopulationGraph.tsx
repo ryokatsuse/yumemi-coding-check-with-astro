@@ -57,7 +57,7 @@ export const PopulationGraph = () => {
   return (
     <div className="graph">
       {!$populationGraphData.length ? (
-        <>データがありません</>
+        <p className="flex h-screen w-screen items-center justify-center">都道府県を選択しましょう</p>
       ) : (
         <Line options={options} data={createPopulationGraphData($populationGraphData)} />
       )}

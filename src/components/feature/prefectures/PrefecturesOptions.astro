@@ -14,6 +14,8 @@ const prefectures = data.result as PrefectureResponse
 
 {
   prefectures.map(prefecture => (
+    <li class="min-w-[8em]">
     <PrefectureSelect prefecture={prefecture} client:load />
+    </li>
   ))
 }
