@@ -11,7 +11,8 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { useStore } from '@nanostores/react';
-import { populationGraphStore } from 'src/store/prefectures';
+import { populationGraphStore } from 'src/store/store';
+import type { PopulationGraphData } from 'src/types/model';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -31,7 +32,7 @@ export const options: ChartOptions<'line'> = {
   },
 };
 
-export const createPopulationGraphData = (data: PopulationGraph[]) => {
+export const createPopulationGraphData = (data: PopulationGraphData[]) => {
   const labels = data[0].valueSeries.map(data => data.year);
   return {
     labels: labels,

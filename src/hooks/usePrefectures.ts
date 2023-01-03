@@ -1,6 +1,6 @@
 import { fetchPopulation } from './../lib/fetchPrefectures';
 import type { Prefecture } from '../types/model';
-import { selectedPopulationDataStore, populationGraphStore } from 'src/store/prefectures';
+import { selectedPopulationDataStore, populationGraphStore } from 'src/store/store';
 import { useStore } from '@nanostores/react';
 
 export const usePrefectures = () => {

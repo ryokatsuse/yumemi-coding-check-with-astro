@@ -1,4 +1,4 @@
-import type { Prefecture } from '@components/feature/graph/PopulationGraph';
+import type { Prefecture } from '../../../types/model';
 import { usePrefectures } from 'src/hooks/usePrefectures';
 interface Props {
   prefecture: Prefecture;

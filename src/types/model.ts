@@ -6,4 +6,4 @@ export type Prefecture = {
 export type PrefectureResponse = { prefCode: number; prefName: string }[];
 
 export type PopulationResponse = { year: number; value: number }[];
-export type PopulationGraph = { pref: Prefecture; valueSeries: PopulationResponse };
+export type PopulationGraphData = { pref: Prefecture; valueSeries: PopulationResponse };
