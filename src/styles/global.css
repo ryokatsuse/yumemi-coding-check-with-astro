@@ -12,7 +12,6 @@ body {
   font-family: Verdana, sans-serif;
   margin: auto;
   /* max-width: 80vw; */
-  text-align: left;
   background-color: #fff;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -25,16 +24,6 @@ body {
 
 main {
   flex: 1;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
 }
 a {
 	color: #3273dc;

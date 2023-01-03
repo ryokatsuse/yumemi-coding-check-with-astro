@@ -1,55 +1,17 @@
 ---
 import Layout from '@components/common/Layout.astro';
-import { DataForPopulationGraph, PopulationGraph, Prefecture } from '@components/feature/graph/PopulationGraph';
-import CheckBox from '@components/feature/prefectures/CheckBox.astro';
-
-// FIXME:仮のモックデータなので後で削除なりMSWなりに移行する
-const data: DataForPopulationGraph[] = [
-  {
-    pref: {
-      prefCode: 3,
-      prefName: "岩手県"
-    },
-    valueSeries: [
-    {value: 1210534, year: 2020},
-    {value: 1161638, year: 2025},
-    {value: 1096141, year: 2030},
-    {value: 1028673, year: 2035},
-    {value: 957788, year: 2040},
-    {value: 884518, year: 2045}
-    ]
-  },
-  {
-    pref: {
-      prefCode: 4,
-      prefName: "東京都"
-    },
-    valueSeries: [
-    {value: 1448517, year: 2020},
-    {value: 1411118, year: 2025},
-    {value: 1371383, year: 2030},
-    {value: 1385563, year: 2035},
-    {value: 1421927, year: 2040},
-    {value: 1419505, year: 2045}
-    ]
-  },
-  ]
-
-  const handle = (pref: Prefecture) => {
-    console.log('pref', pref)
-  }
+import { PopulationGraph } from '@components/feature/graph/PopulationGraph';
+import PrefecturesOptions from '@components/feature/prefectures/PrefecturesOptions.astro';
 ---
 
 <Layout>
   <section>
     <h1 class="text-xl">都道府県の選択</h1>
     <p>選択した都道府県の総人口の推移がグラフで表示されます。</p>
-    <CheckBox prefecture={{prefCode: 3,
-      prefName: "岩手県"}} onChangePrefectureItem={handle} isChecked={true}/>
+    <PrefecturesOptions />
   </section>
   <section class="mt-6">
     <h1 class="text-xl">総人口の推移グラフ</h1>
-    <!-- FIXME:Astroでいい感じに使えるChartライブラリを探し中一旦React版で作成 -->
-    <PopulationGraph data={data} client:only="react" />
+    <PopulationGraph client:only />
   </section>
 </Layout>

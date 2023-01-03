@@ -1,0 +1,19 @@
+---
+import type { PrefectureResponse } from '@components/feature/graph/PopulationGraph';
+import {PrefectureSelect} from '@components/feature/prefectures/PrefectureSelect';
+
+const response = await fetch('https://opendata.resas-portal.go.jp/api/v1/prefectures', {
+  headers: {
+    'X-API-KEY': 'ahA887TBCpn6jzU6cVR1ZXGHPMgcZLfOi4MCGN8V',
+  },
+});
+const data = await response.json();
+const prefectures = data.result as PrefectureResponse
+
+---
+
+{
+  prefectures.map(prefecture => (
+    <PrefectureSelect prefecture={prefecture} client:load />
+  ))
+}
